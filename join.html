@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Join a Sprout family journal | Sprout</title>
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav><div class="inner">
+    <a class="brand" href="./"><img src="img/icon.png" alt="">Sprout</a>
+    <a class="link" href="android-privacy.html">Android privacy</a>
+    <a class="link" href="support.html">Support</a>
+  </div></nav>
+  <main class="prose">
+    <h1>Join a Sprout family journal</h1>
+    <p>If Sprout is installed on your Android device, open the app to use your invitation. You can also enter the code under <strong>Settings → Family sharing</strong>.</p>
+    <p id="invite-code" hidden>Invitation code <strong id="code"></strong></p>
+    <p><a id="open-sprout" class="button" hidden>Open Sprout</a></p>
+    <p id="missing" hidden>This link is missing an invitation code. Ask the person who invited you to send a new link.</p>
+    <script>
+      const code = new URLSearchParams(window.location.search).get("code");
+      if (/^[A-HJ-NP-Z2-9]{10}$/.test(code ?? "")) {
+        document.getElementById("code").textContent = code;
+        document.getElementById("invite-code").hidden = false;
+        const appLink = document.getElementById("open-sprout");
+        appLink.href = "sprout://join?code=" + encodeURIComponent(code);
+        appLink.hidden = false;
+      } else {
+        document.getElementById("missing").hidden = false;
+      }
+    </script>
+  </main>
+  <footer><div class="inner">
+    <span>© 2026 Elie Bitar</span>
+    <a href="android-privacy.html">Android privacy</a>
+    <a href="delete-account.html">Delete account</a>
+  </div></footer>
+</body>
+</html>
