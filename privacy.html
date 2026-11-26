@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sprout Privacy Policy</title>
-  <meta name="description" content="Sprout: Baby Journal collects no data. Everything stays on your device and in your private iCloud.">
+  <meta name="description" content="How Sprout for iPhone handles journal data, optional iCloud sync, and Google family sharing.">
   <link rel="icon" href="img/icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,30 +18,35 @@
 
   <main class="prose">
     <h1>Privacy Policy</h1>
-    <p class="muted">Effective November 25, 2026</p>
+    <p class="muted">Effective November 26, 2026</p>
 
     <p>Sprout: Baby Journal (“Sprout”) works as a personal journal without an account. You can use iCloud for Apple devices or choose optional Google sharing with a partner who uses Android. Sprout has no advertising or cross-app tracking.</p>
 
     <h2>What Sprout stores, and where</h2>
-    <p>The entries you create — sleep, meals, Kita days, growth measurements, notes, photos and your child's name, birthday and photo — are stored:</p>
+    <p>The entries you create — sleep, meals, Kita days, growth measurements, notes, photos, voice notes and your child's name, birthday and photo — are stored:</p>
     <ul>
       <li><strong>On your device</strong>, inside the app.</li>
       <li><strong>In your private iCloud database</strong>, if iCloud is turned on, so your journal syncs between your devices. This database belongs to your Apple Account. Apple encrypts it, and the developer of Sprout cannot access it.</li>
     </ul>
     <h2>Optional Google sharing</h2>
     <p>If you choose Partner on Android, Sprout uses Google Sign-In and Firebase Authentication to store your name, email address, and account identifier for sign-in and journal access. Google may process sign-in information such as your IP address for fraud prevention, and Firebase may process service diagnostics.</p>
-    <p>When you start or join a shared journal, Cloud Firestore stores the journal text, child profile, sleep, meals, daycare entries, growth measurements, milestones, member identifiers, and invite codes so the people you invite can use the journal. Google sharing excludes photos and the daycare location you save on your iPhone.</p>
+    <p>When you start or join a shared journal, Cloud Firestore stores the journal text, child profile, sleep, meals, daycare entries, growth measurements, milestones, member identifiers, and invite codes so the people you invite can use the journal. The saved daycare location stays on your iPhone. Earlier builds did not send photo files through Google sharing.</p>
+
+    <h2>Photos and voice notes in shared journals</h2>
+    <p>In the November 2026 internal test builds, if you use Google family sharing, Sprout can upload photos, thumbnails and voice recordings from a shared journal to Google Cloud Firestore in Frankfurt, Germany. This includes attached photos, child profile photos and daycare report images. Sprout uses these temporary copies to deliver the files to members of that journal.</p>
+    <p>Each transfer expires after 30 days. Sprout removes the server copy after all intended recipients have downloaded it, or when a family member’s app next runs cleanup after it expires. If no member’s app runs cleanup, the server copy can remain longer. Copies already downloaded to another member’s device stay on that device. If a member is missing a file, their app can request a new transfer from a device that still has it.</p>
 
     <h2>Permissions</h2>
     <ul>
-      <li><strong>Camera</strong> — to take photos of moments, meals and the Kita daily report. Photos are saved only in Sprout (and, if you choose, in your Photos library).</li>
-      <li><strong>Photos</strong> — to show the photos you took on a given day so you can keep them in one tap, and to save in-app camera photos to your library if you choose. Photos are excluded from Google sharing.</li>
+      <li><strong>Camera</strong> — to take photos of moments, meals and the Kita daily report.</li>
+      <li><strong>Photos</strong> — to show the photos you took on a given day so you can keep them in one tap, and to save in-app camera photos to your library if you choose.</li>
+      <li><strong>Microphone</strong> (optional) — to record a voice note when you choose to add one.</li>
       <li><strong>Location</strong> (optional) — to recognise when you arrive at the Kita location you saved. This check happens on your iPhone; your location is never stored by Sprout or sent anywhere.</li>
       <li><strong>Notifications</strong> (optional) — for the Kita arrival reminder and the optional evening check-in. All notifications are created on your device.</li>
     </ul>
 
     <h2>Text recognition</h2>
-    <p>When you scan a Kita daily report, the text is recognised on your device using Apple's Vision framework. The image and text are not sent anywhere.</p>
+    <p>When you scan a Kita daily report, the text is recognised on your device using Apple's Vision framework. If you save a report to a shared journal, the saved text syncs with the journal and the image can transfer as described above.</p>
 
     <h2>Children's privacy</h2>
     <p>Sprout is designed for parents and caregivers. When a caregiver enables Google sharing, information they enter about their child is processed to provide the shared journal to its members.</p>
